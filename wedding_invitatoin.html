@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartik & Vibhuti | Wedding Invitation</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --ice-blue: #e3f2fd;
+            --haldi-yellow: #ffeb3b;
+            --haldi-orange: #fb8c00;
+            --teal-main: #008080;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            background-color: #fff;
+            color: #333;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--teal-main);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
+        }
+
+        .save-the-date {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Haldi Section (Yellow/Orange) --- */
+        #haldi {
+            background: linear-gradient(135deg, var(--haldi-yellow), var(--haldi-orange));
+            color: #fff;
+        }
+
+        #haldi .event-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- Engagement Section (Ice Blue) --- */
+        #engagement {
+            background: linear-gradient(135deg, #f0f8ff, var(--ice-blue));
+            color: #2c3e50;
+        }
+
+        #engagement .ring-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Wedding Section (Teal) --- */
+        #wedding {
+            background: linear-gradient(rgba(0, 128, 128, 0.9), rgba(0, 77, 77, 0.9)),
+                url('https://www.transparenttextures.com/patterns/mandala.png');
+            color: #fff;
+        }
+
+        .wedding-crown {
+            color: var(--gold);
+            font-size: 4rem;
+        }
+
+        /* --- Venue Section --- */
+        #venue {
+            background: #f9f9f9;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--teal-main);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #005f5f;
+        }
+
+        .date-circle {
+            width: 150px;
+            height: 150px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cursive {
+                font-size: 2.2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="hero">
+        <div data-aos="fade-up" data-aos-duration="2000">
+            <p class="save-the-date">Together with their families</p>
+            <h1>Kartik <span class="cursive">&</span> Vibhuti</h1>
+            <p>Are getting married!</p>
+            <div class="date-circle">
+                <span style="font-size: 1.5rem; font-weight: bold;">MAY</span>
+                <span style="font-size: 2rem;">02-03</span>
+                <span>2026</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="haldi">
+        <div class="event-card" data-aos="zoom-in" data-aos-duration="1200">
+            <h2 class="cursive">The Haldi Ceremony</h2>
+            <p>A splash of yellow, a dash of fun!</p>
+            <hr style="margin: 20px auto; width: 50px; border-color: white;">
+            <h3>May 2nd, 2026</h3>
+            <p>Starts at 12:00 PM</p>
+            <p style="margin-top: 15px; font-weight: 600;">Theme: Bright Yellow & Orange</p>
+        </div>
+    </section>
+
+    <section id="engagement">
+        <div data-aos="fade-right" data-aos-duration="1200">
+            <div class="ring-icon">💍</div>
+            <h2 class="cursive" style="color: #4682B4;">The Engagement</h2>
+            <p>Two hearts, one soul, and a promise of forever.</p>
+            <div class="date-circle" style="border-color: #4682B4;">
+                <span style="font-weight: bold;">MAY 02</span>
+                <span>06:00 PM</span>
+            </div>
+            <p>Join us as we exchange rings in our <b>Ice Blue</b> outfits.</p>
+            <p style="margin-top: 10px;"><i>Dress Code: Ice Blue / Pastels</i></p>
+        </div>
+    </section>
+
+    <section id="wedding">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <div class="wedding-crown">𑁍</div>
+            <h2 class="cursive" style="color: var(--gold);">The Wedding</h2>
+            <p>The beginning of our 'Always'</p>
+            <h1 style="font-size: 3rem; margin: 20px 0;">May 3rd, 2026</h1>
+            <h3>Auspicious Muhurta: 11:10 AM</h3>
+            <p style="margin-top: 20px;">We’ll be dressed in <b>Teal</b> to start our new journey.</p>
+        </div>
+    </section>
+
+    <section id="venue">
+        <div data-aos="fade-up">
+            <h2 class="cursive">The Venue</h2>
+            <h3>Marigold Celebration Hall</h3>
+            <p>Hingna, Nagpur</p>
+            <br>
+            <p>Your presence will make our day truly special.</p>
+            <a href="https://www.google.com/maps/search/Marigold+Celebration+Hall+Hingna+Nagpur" target="_blank"
+                class="btn">📍 View on Google Maps</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false, // Allows animations to repeat when scrolling back up
+            mirror: true
+        });
+    </script>
+</body>
+
+</html>
