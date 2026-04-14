@@ -242,7 +242,7 @@ export default function EnvelopeOpening({
               <div className="w-full max-w-[340px] md:max-w-[250px] rounded-[28px] p-[1px] bg-gradient-to-br from-gold-foil via-cream to-maroon/20 shadow-[0_18px_40px_rgba(92,0,0,0.12)]">
                 <div className="relative overflow-hidden rounded-[27px] bg-[#fffaf3]">
                   <img
-                    src="/assets/weeding_generated_img.png"
+                    src="/assets/wedding_generated_img.png"
                     alt="Wedding illustration"
                     className="wedding-card-image w-auto h-full object-cover"
                   />

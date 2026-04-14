@@ -5,9 +5,7 @@ import { useEffect, useRef } from "react";
 const DEFAULT_SRC = "/assets/wedding-music.mp3";
 const FALLBACK_SRCS = [
   DEFAULT_SRC,
-  "/assets/wedding_music.mp3",
-  "/assets/music.mp3",
-  "/assets/song.mp3",
+  "/assets/wedding-music.mp3"
 ];
 
 export default function BackgroundMusic({
