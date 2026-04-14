@@ -91,10 +91,10 @@ export default function HeroSection() {
         {/* The invitation card */}
         <div ref={cardRef} className="hero-card invitation-card w-full max-w-lg mx-auto relative">
           {/* Mandala corner ornaments */}
-          <div className="mandala-corner top-left" />
-          <div className="mandala-corner top-right" />
-          <div className="mandala-corner bottom-left" />
-          <div className="mandala-corner bottom-right" />
+          {/* <div className="mandala-corner top-left" /> */}
+          {/* <div className="mandala-corner top-right" /> */}
+          <div className="mandala-corner bottom-left rotate-270" />
+          <div className="mandala-corner bottom-right rotate-90" />
 
           {/* Card content */}
           <div className="flex flex-col items-center text-center relative z-10 pt-8">
@@ -113,7 +113,7 @@ export default function HeroSection() {
               Together with their families
             </p>
 
-            <h1 className="hero-elem font-serif text-4xl md:text-6xl lg:text-7xl text-maroon-dark leading-tight mb-2">
+            <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-2">
               Kartik
             </h1>
 
@@ -121,7 +121,7 @@ export default function HeroSection() {
               &amp;
             </span>
 
-            <h1 className="hero-elem font-serif text-4xl md:text-6xl lg:text-7xl text-maroon-dark leading-tight mb-6">
+            <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-6">
               Vibhuti
             </h1>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useLayoutEffect, useCallback } from "react";
 import gsap from "gsap";
 
 export default function EnvelopeOpening({
@@ -31,15 +31,17 @@ export default function EnvelopeOpening({
 
     // Step 1: Seal breaks
     tl.to(sealRef.current, {
-      scale: 1.3,
-      duration: 0.2,
+      scale: 1.08,
+      y: -3,
+      duration: 0.22,
       ease: "power2.out",
     })
       .to(sealRef.current, {
-        scale: 0,
+        scale: 0.7,
         opacity: 0,
-        rotation: 180,
-        duration: 0.5,
+        rotation: 12,
+        y: 6,
+        duration: 0.28,
         ease: "power2.in",
       })
       // Step 2: Flap opens
@@ -58,26 +60,33 @@ export default function EnvelopeOpening({
       // Step 4: Scale up and fade
       .to(
         [".envelope", cardRef.current],
-        { scale: 3, opacity: 0, duration: 1, ease: "power3.in" },
+        { scale: 4, opacity: 0, duration: 1, ease: "power3.in" },
         "+=0.4"
       );
   }, [isOpening, onComplete]);
 
   // Seal pulse
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!sealRef.current || isOpening) return;
-    gsap.to(sealRef.current, {
-      scale: 1.06,
-      duration: 1.5,
+    const tween = gsap.to(sealRef.current, {
+      scale: 1.03,
+      y: -1,
+      duration: 2.8,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
     });
+    return () => {
+      tween.kill();
+    };
   }, [isOpening]);
 
   // Entrance animations
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap.timeline();
+    gsap.set([".env-corner", ".envelope", ".env-text", ".tap-hint", ".float-dot"], {
+      force3D: true,
+    });
     // Floating decorative corners
     tl.fromTo(
       ".env-corner",
@@ -88,35 +97,39 @@ export default function EnvelopeOpening({
       // Envelope slides in
       .fromTo(
         ".envelope",
-        { y: 60, opacity: 0, scale: 0.92 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" },
+        { y: 80, opacity: 0, scale: 0.88 },
+        { y: 0, opacity: 1, scale: 1, duration: 1.25, ease: "power3.out" },
         0.2
       )
       // Text reveals
       .fromTo(
         ".env-text",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power2.out" },
+        { y: 0, opacity: 1, duration: 0.85, stagger: 0.15, ease: "power2.out" },
         0.6
       )
       // Tap hint
       .fromTo(
         ".tap-hint",
         { y: 10, opacity: 0 },
-        { y: 0, opacity: 0.7, duration: 0.6, ease: "power2.out" },
+        { y: 0, opacity: 0.8, duration: 0.7, ease: "power2.out" },
         1.2
       );
 
     // Floating particle loop
     gsap.to(".float-dot", {
-      y: -20,
-      opacity: 0.6,
-      duration: 2.5,
+      y: -24,
+      opacity: 0.68,
+      duration: 3.4,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
       stagger: { each: 0.3, from: "random" },
     });
+    return () => {
+      tl.kill();
+      gsap.killTweensOf(".float-dot");
+    };
   }, []);
 
   return (
@@ -138,10 +151,10 @@ export default function EnvelopeOpening({
       />
 
       {/* Corner mandala ornaments */}
-      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute top-0 left-0 w-28 md:w-44 opacity-25" />
-      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute top-0 right-0 w-28 md:w-44 opacity-25" style={{ transform: "scaleX(-1)" }} />
+      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute top-0 left-0 w-28 md:w-44 opacity-25 rotate-90" />
+      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute top-0 right-0 w-28 md:w-44 opacity-25 rotate-360" style={{ transform: "scaleX(-1)" }} />
       <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute bottom-0 left-0 w-28 md:w-44 opacity-25" style={{ transform: "scaleY(-1)" }} />
-      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute bottom-0 right-0 w-28 md:w-44 opacity-25" style={{ transform: "scale(-1,-1)" }} />
+      <img src="/assets/mandala-corner.png" alt="" className="env-corner absolute bottom-0 right-0 w-28 md:w-44 opacity-25 rotate-90" style={{ transform: "scale(-1,-1)" }} />
 
       {/* Floating gold dots — deterministic to avoid hydration mismatch */}
       {[
@@ -160,7 +173,7 @@ export default function EnvelopeOpening({
       ].map((dot, i) => (
         <div
           key={i}
-          className="float-dot absolute rounded-full bg-gold-foil/30"
+          className="float-dot absolute rounded-full bg-gold-foil/40"
           style={{
             width: `${dot.w}px`,
             height: `${dot.h}px`,
@@ -176,19 +189,19 @@ export default function EnvelopeOpening({
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center gap-6 md:gap-8 px-4 max-w-lg mx-auto">
         {/* Om symbol */}
-        <p className="env-text text-4xl md:text-5xl text-gold-foil drop-shadow-sm">
+        <p className="env-text text-4xl md:text-5xl leading-0.5 text-gold-foil drop-shadow-sm">
           ॐ
         </p>
-
-        {/* Greeting text */}
-        <div className="text-center">
           <p className="env-text text-xs md:text-sm uppercase tracking-[0.4em] text-gold-foil/80 font-semibold mb-2">
             || शुभ विवाह ||
           </p>
+
+        {/* Greeting text */}
+        <div className="text-center">
           <p className="env-text font-serif text-lg md:text-2xl text-maroon/80 italic">
             You are cordially invited to the wedding celebration of
           </p>
-          <h2 className="env-text font-cursive text-4xl md:text-6xl text-maroon-dark mt-3">
+          <h2 className="env-text font-cursive text-5xl md:text-6xl text-red-dark mt-3">
             Kartik & Vibhuti
           </h2>
         </div>
@@ -196,7 +209,10 @@ export default function EnvelopeOpening({
 
 
         {/* Envelope */}
-        <div className="envelope relative" style={{ transformStyle: "preserve-3d" }}>
+        <div
+          className={`envelope relative ${isOpening ? "is-opening" : ""}`}
+          style={{ transformStyle: "preserve-3d" }}
+        >
           {/* Envelope body with pattern */}
           <div className="envelope-body">
             <div
@@ -212,16 +228,34 @@ export default function EnvelopeOpening({
           {/* Card inside */}
           <div
             ref={cardRef}
-            className="absolute left-[10%] right-[10%] top-[15%] bottom-[10%] rounded-t-[80px] rounded-b-lg opacity-0"
+            className="absolute left-[0%] right-[0%] top-[-40%] bottom-[10%] rounded-t-[80px] rounded-b-lg opacity-0 overflow-hidden wedding-card"
             style={{
-              background: "linear-gradient(to bottom, var(--cream), white)",
-              border: "1px solid var(--gold-foil)",
-              boxShadow: "0 -4px 20px rgba(0,0,0,0.08)",
+              background:
+                "linear-gradient(180deg, rgba(255, 248, 240, 0.98) 0%, rgba(250, 237, 223, 0.96) 45%, rgba(241, 222, 198, 0.98) 100%)",
+              border: "1px solid rgba(212, 175, 55, 0.95)",
+              boxShadow:
+                "0 -4px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8)",
             }}
           >
-            <div className="flex flex-col items-center justify-center h-full pt-8">
-              <span className="text-gold-foil text-lg font-serif italic">K & V</span>
-              <div className="w-12 h-[1px] bg-gold-foil/50 mt-2" />
+            <div className="absolute inset-0 wedding-card-glow" />
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-0 pt-7 pb-5">
+              <div className="w-full max-w-[340px] md:max-w-[250px] rounded-[28px] p-[1px] bg-gradient-to-br from-gold-foil via-cream to-maroon/20 shadow-[0_18px_40px_rgba(92,0,0,0.12)]">
+                <div className="relative overflow-hidden rounded-[27px] bg-[#fffaf3]">
+                  <img
+                    src="/assets/weeding_generated_img.png"
+                    alt="Wedding illustration"
+                    className="wedding-card-image w-auto h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-maroon/15 via-transparent to-gold-foil/10" />
+                  <div className="absolute inset-0 ring-overlay" />
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.42em] text-maroon/60 font-semibold">
+                  Wedding Moments
+                </p>
+                <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold-foil to-transparent mx-auto mt-3" />
+              </div>
             </div>
           </div>
 
@@ -233,14 +267,24 @@ export default function EnvelopeOpening({
           />
 
           {/* Wax seal */}
-          <div ref={sealRef} className="wax-seal" onClick={handleOpen}>
-            <img src="/assets/wax-seal.png" alt="Open invitation" />
+          <div
+            ref={sealRef}
+            className={`wax-seal ${isOpening ? "is-opening" : ""}`}
+            onClick={handleOpen}
+          >
+            <img src="/assets/wax-seal.png" alt="Open invitation" className="wax-seal-img" />
           </div>
         </div>
 
         {/* Tap hint */}
-        <p className="tap-hint text-xs uppercase tracking-[0.3em] text-maroon/50 opacity-0">
-          ✦ Tap the seal to open ✦
+        <p className={`tap-hint ${isOpening ? "is-opening" : ""} text-xs font-bold uppercase tracking-[0.3em] text-maroon/50`}>
+          <span className="tap-hint-star" aria-hidden="true">
+            ✦
+          </span>
+          <span className="tap-hint-text">Tap the seal to open</span>
+          <span className="tap-hint-star" aria-hidden="true">
+            ✦
+          </span>
         </p>
       </div>
 

@@ -73,7 +73,7 @@ export default function VenueSection() {
           <MapPin size={32} className="text-maroon" />
         </div>
 
-        <h2 className="venue-elem font-cursive text-4xl md:text-6xl mb-3 text-maroon-dark">
+        <h2 className="venue-elem font-cursive text-4xl md:text-6xl mb-3 text-red-dark">
           The Venue
         </h2>
 

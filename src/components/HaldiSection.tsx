@@ -147,10 +147,10 @@ export default function HaldiSection() {
           borderWidth: "2px",
         }}>
           {/* Mandala corner ornaments — brightened for dark bg */}
-          <div className="mandala-corner top-left" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
-          <div className="mandala-corner top-right" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
-          <div className="mandala-corner bottom-left" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
-          <div className="mandala-corner bottom-right" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
+          {/* <div className="mandala-corner top-left" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} /> */}
+          {/* <div className="mandala-corner top-right" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} /> */}
+          <div className="mandala-corner bottom-left rotate-270" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
+          <div className="mandala-corner bottom-right rotate-90" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
 
           <div className="flex flex-col items-center text-center relative z-10 pt-6">
             {/* Turmeric pot icon — elastic pop + shimmer */}
@@ -181,7 +181,7 @@ export default function HaldiSection() {
             <div className="gold-divider haldi-elem" />
 
             {/* Date display — arch-shaped like wedding */}
-            <div className="haldi-elem w-full max-w-xs backdrop-blur-sm border border-yellow-500/30 p-6 md:p-8 rounded-t-[70px] rounded-b-2xl relative mt-4 mb-4"
+            <div className="haldi-elem w-full max-w-xs backdrop-blur-sm border border-yellow-500/30 p-6 md:p-8 rounded-t-[70px] rounded-b-2xl relative mt-0 mb-8"
               style={{ background: "rgba(120, 53, 15, 0.4)" }}
             >
               <div className="absolute inset-[3px] rounded-t-[67px] rounded-b-[13px] border border-yellow-500/15" />

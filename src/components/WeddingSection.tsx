@@ -102,10 +102,10 @@ export default function WeddingSection() {
           borderColor: "var(--gold-foil)",
         }}>
           {/* Mandala corner ornaments */}
-          <div className="mandala-corner top-left" style={{ filter: "brightness(3)", opacity: 0.2 }} />
-          <div className="mandala-corner top-right" style={{ filter: "brightness(3)", opacity: 0.2 }} />
-          <div className="mandala-corner bottom-left" style={{ filter: "brightness(3)", opacity: 0.2 }} />
-          <div className="mandala-corner bottom-right" style={{ filter: "brightness(3)", opacity: 0.2 }} />
+          {/* <div className="mandala-corner top-left" style={{ filter: "brightness(3)", opacity: 0.2 }} /> */}
+          {/* <div className="mandala-corner top-right" style={{ filter: "brightness(3)", opacity: 0.2 }} /> */}
+          <div className="mandala-corner bottom-left rotate-270" style={{ filter: "brightness(3)", opacity: 0.2 }} />
+          <div className="mandala-corner bottom-right rotate-90" style={{ filter: "brightness(3)", opacity: 0.2 }} />
 
           <div className="flex flex-col items-center text-center relative z-10 pt-4">
             {/* Wedding crown / Kalash */}

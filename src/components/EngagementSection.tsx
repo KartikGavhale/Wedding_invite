@@ -113,10 +113,10 @@ export default function EngagementSection() {
           borderWidth: "2px",
         }}>
           {/* Mandala corner ornaments */}
-          <div className="mandala-corner top-left" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
-          <div className="mandala-corner top-right" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
-          <div className="mandala-corner bottom-left" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
-          <div className="mandala-corner bottom-right" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
+          {/* <div className="mandala-corner top-left" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} /> */}
+          {/* <div className="mandala-corner top-right" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} /> */}
+          <div className="mandala-corner bottom-left rotate-270" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
+          <div className="mandala-corner bottom-right rotate-90" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
 
           <div className="flex flex-col items-center text-center relative z-10 pt-6">
             {/* Ring icon with elastic pop & glow */}
@@ -127,7 +127,7 @@ export default function EngagementSection() {
                 boxShadow: "0 0 25px rgba(14,116,144,0.2)",
               }}
             >
-              <img src="/assets/engagement_ring.png" alt="Engagement ring" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
+              <img src="/assets/engagement_ring.png" alt="Engagement ring" className="w-18 h-18 object-contain" />
             </div>
 
             <p className="eng-elem text-deep-teal text-xs md:text-sm uppercase tracking-[0.4em] font-semibold mb-1">
@@ -147,7 +147,7 @@ export default function EngagementSection() {
             <div className="gold-divider eng-elem" style={{ background: "linear-gradient(to right, transparent, var(--deep-teal), transparent)", opacity: 0.3, height: "1px" }} />
 
             {/* Date display — arch-shaped like wedding section */}
-            <div className="eng-elem w-full max-w-xs bg-white/50 backdrop-blur-sm border border-deep-teal/20 p-6 md:p-8 rounded-t-[70px] rounded-b-2xl relative mt-4 mb-4">
+            <div className="eng-elem w-full max-w-xs bg-white/50 backdrop-blur-sm border border-deep-teal/20 p-6 md:p-8 rounded-t-[70px] rounded-b-2xl relative mt-0 mb-8">
               <div className="absolute inset-[3px] rounded-t-[67px] rounded-b-[13px] border border-deep-teal/10" />
 
               <span className="text-xs font-bold text-deep-teal tracking-[0.3em] uppercase relative z-10">
