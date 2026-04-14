@@ -38,6 +38,7 @@ export default function BackgroundMusic({
 
     const handleFirstInteraction = () => {
       void playFromStart();
+      removeEvents();
     };
 
     const handleError = async () => {
@@ -55,16 +56,24 @@ export default function BackgroundMusic({
       }
     };
 
+    const interactionEvents = ["click", "touchstart", "pointerdown", "keydown"];
+
+    const addEvents = () => {
+      interactionEvents.forEach(evt => document.addEventListener(evt, handleFirstInteraction));
+    };
+
+    const removeEvents = () => {
+      interactionEvents.forEach(evt => document.removeEventListener(evt, handleFirstInteraction));
+    };
+
     void playFromStart();
-    document.addEventListener("pointerdown", handleFirstInteraction, { once: true });
-    document.addEventListener("keydown", handleFirstInteraction, { once: true });
+    addEvents();
     audio.addEventListener("error", handleError);
 
     return () => {
       audio.pause();
       audio.src = "";
-      document.removeEventListener("pointerdown", handleFirstInteraction);
-      document.removeEventListener("keydown", handleFirstInteraction);
+      removeEvents();
       audio.removeEventListener("error", handleError);
     };
   }, [src]);
