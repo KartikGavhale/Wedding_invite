@@ -9,6 +9,7 @@ import VenueSection from "@/components/VenueSection";
 import FooterSection from "@/components/FooterSection";
 import GlobalBackground from "@/components/GlobalBackground";
 import EnvelopeOpening from "@/components/EnvelopeOpening";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export default function Home() {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
         }`}
       >
         <GlobalBackground />
+        <BackgroundMusic />
 
         {/* Sections: Hero → Engagement → Haldi → Wedding → Venue → Footer */}
         <HeroSection />
