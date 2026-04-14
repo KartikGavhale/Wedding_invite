@@ -135,7 +135,7 @@ export default function WeddingSection() {
                 Auspicious Muhurta
               </h3>
               <p className="text-2xl md:text-3xl font-serif text-gold-light relative z-10">
-                11:10 AM
+                11:07 AM
               </p>
             </div>
           </div>

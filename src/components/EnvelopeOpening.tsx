@@ -271,13 +271,28 @@ export default function EnvelopeOpening({
             ref={sealRef}
             className={`wax-seal ${isOpening ? "is-opening" : ""}`}
             onClick={handleOpen}
+            onTouchStart={(e) => {
+              // Ensure touch triggers start the animation on mobile Safari/Chrome immediately
+              handleOpen();
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label="Open invitation"
           >
             <img src="/assets/wax-seal.png" alt="Open invitation" className="wax-seal-img" />
           </div>
         </div>
 
         {/* Tap hint */}
-        <p className={`tap-hint ${isOpening ? "is-opening" : ""} text-xs font-bold uppercase tracking-[0.3em] text-maroon/50`}>
+        <p 
+          className={`tap-hint ${isOpening ? "is-opening" : ""} text-xs font-bold uppercase tracking-[0.3em] text-maroon/50 cursor-pointer`}
+          onClick={handleOpen}
+          onTouchStart={(e) => {
+            handleOpen();
+          }}
+          role="button"
+          tabIndex={0}
+        >
           <span className="tap-hint-star" aria-hidden="true">
             ✦
           </span>
