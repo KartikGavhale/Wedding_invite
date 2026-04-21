@@ -3,8 +3,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "Kartik & Vibhuti | Wedding Invitation",
-  description: "Join us in celebrating the wedding of Kartik and Vibhuti.",
+  title: "Vibhuti & Kartik | Wedding Invitation",
+  description: "Join us in celebrating the wedding of Vibhuti and Kartik.",
 };
 
 export default function RootLayout({

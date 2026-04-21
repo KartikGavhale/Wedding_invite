@@ -107,7 +107,7 @@ export default function WeddingSection() {
           <div className="mandala-corner bottom-left rotate-270" style={{ filter: "brightness(3)", opacity: 0.2 }} />
           <div className="mandala-corner bottom-right rotate-90" style={{ filter: "brightness(3)", opacity: 0.2 }} />
 
-          <div className="flex flex-col items-center text-center relative z-10 pt-4">
+          <div className="flex flex-col items-center text-center relative z-10">
             {/* Wedding crown / Kalash */}
             <div className="wed-crown wed-elem text-5xl md:text-7xl text-gold-foil mb-4 drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]">
               𑁍

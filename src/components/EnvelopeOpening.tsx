@@ -192,9 +192,9 @@ export default function EnvelopeOpening({
         <p className="env-text text-4xl md:text-5xl leading-0.5 text-gold-foil drop-shadow-sm">
           ॐ
         </p>
-          <p className="env-text text-xs md:text-sm uppercase tracking-[0.4em] text-gold-foil/80 font-semibold mb-2">
-            || शुभ विवाह ||
-          </p>
+        <p className="env-text text-xs md:text-sm uppercase tracking-[0.4em] text-gold-foil/80 font-semibold mb-2">
+          || शुभ विवाह ||
+        </p>
 
         {/* Greeting text */}
         <div className="text-center">
@@ -202,7 +202,7 @@ export default function EnvelopeOpening({
             You are cordially invited to the wedding celebration of
           </p>
           <h2 className="env-text font-cursive text-5xl md:text-6xl text-red-dark mt-3">
-            Kartik & Vibhuti
+            Vibhuti & Kartik
           </h2>
         </div>
 
@@ -284,7 +284,7 @@ export default function EnvelopeOpening({
         </div>
 
         {/* Tap hint */}
-        <p 
+        <p
           className={`tap-hint ${isOpening ? "is-opening" : ""} text-xs font-bold uppercase tracking-[0.3em] text-maroon/50 cursor-pointer`}
           onClick={handleOpen}
           onTouchStart={(e) => {

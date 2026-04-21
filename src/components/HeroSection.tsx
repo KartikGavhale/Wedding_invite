@@ -97,7 +97,7 @@ export default function HeroSection() {
           <div className="mandala-corner bottom-right rotate-90" />
 
           {/* Card content */}
-          <div className="flex flex-col items-center text-center relative z-10 pt-8">
+          <div className="flex flex-col items-center text-center relative z-10">
             {/* Om / Shubh symbol */}
             <p className="hero-elem text-3xl md:text-4xl text-gold-foil mb-2">
               ॐ
@@ -107,29 +107,29 @@ export default function HeroSection() {
               || शुभ विवाह ||
             </p>
 
-
-
             <p className="hero-elem uppercase tracking-[0.25em] text-xs md:text-sm font-semibold text-maroon/70 mb-6">
               Together with their families
             </p>
 
             <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-2">
-              Kartik Gavhale
+              Vibhuti Neware
             </h1>
 
             <span className="hero-elem font-cursive text-gold-foil text-4xl md:text-5xl lg:text-6xl my-1">
               &amp;
             </span>
 
-            <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-6">
-              Vibhuti Neware
+            <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-0">
+              Kartik Gavhale
             </h1>
 
             <div className="gold-divider hero-elem" />
-
             <p className="hero-elem font-serif text-lg md:text-xl text-maroon/80 italic mb-8">
-              Request the pleasure of your company
+              Mr. Milind Neware and family welcomes you.
             </p>
+            {/* <p className="hero-elem font-serif text-lg md:text-xl text-maroon/80 italic mb-8">
+              Request the pleasure of your company
+            </p> */}
 
             {/* Date medallion */}
             <div className="hero-date date-medallion mb-4">

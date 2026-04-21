@@ -152,7 +152,7 @@ export default function HaldiSection() {
           <div className="mandala-corner bottom-left rotate-270" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
           <div className="mandala-corner bottom-right rotate-90" style={{ filter: "brightness(3) sepia(1) saturate(3) hue-rotate(10deg)", opacity: 0.2 }} />
 
-          <div className="flex flex-col items-center text-center relative z-10 pt-6">
+          <div className="flex flex-col items-center text-center relative z-10">
             {/* Turmeric pot icon — elastic pop + shimmer */}
             <div className="haldi-pot haldi-elem w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mb-4"
               style={{

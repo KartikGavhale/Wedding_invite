@@ -118,7 +118,7 @@ export default function EngagementSection() {
           <div className="mandala-corner bottom-left rotate-270" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
           <div className="mandala-corner bottom-right rotate-90" style={{ opacity: 0.2, filter: "hue-rotate(160deg)" }} />
 
-          <div className="flex flex-col items-center text-center relative z-10 pt-6">
+          <div className="flex flex-col items-center text-center relative z-10">
             {/* Ring icon with elastic pop & glow */}
             <div className="eng-ring-icon eng-elem ring-glow w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mb-4"
               style={{
