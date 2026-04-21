@@ -187,13 +187,13 @@ export default function HaldiSection() {
               <div className="absolute inset-[3px] rounded-t-[67px] rounded-b-[13px] border border-yellow-500/15" />
 
               <h3 className="text-3xl md:text-4xl font-serif font-bold text-white tracking-wider relative z-10 pt-2">
-                May 3rd, 2026
+                May 2nd, 2026
               </h3>
               <p className="text-lg md:text-xl font-light tracking-[0.2em] uppercase text-yellow-200 mt-2 relative z-10">
-                12:00 AM
+                09:00 PM
               </p>
               <span className="text-xs tracking-[0.3em] text-yellow-300/60 uppercase font-semibold relative z-10">
-                Onwards (Mid-Night)
+                Onwards
               </span>
             </div>
           </div>

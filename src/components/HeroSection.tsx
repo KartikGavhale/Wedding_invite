@@ -114,7 +114,7 @@ export default function HeroSection() {
             </p>
 
             <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-2">
-              Kartik
+              Kartik Gavhale
             </h1>
 
             <span className="hero-elem font-cursive text-gold-foil text-4xl md:text-5xl lg:text-6xl my-1">
@@ -122,7 +122,7 @@ export default function HeroSection() {
             </span>
 
             <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-6">
-              Vibhuti
+              Vibhuti Neware
             </h1>
 
             <div className="gold-divider hero-elem" />
