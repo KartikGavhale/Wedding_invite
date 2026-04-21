@@ -154,7 +154,7 @@ export default function EngagementSection() {
                 May 02
               </span>
               <h3 className="text-3xl md:text-4xl font-serif text-deep-teal my-2 relative z-10">
-                6:00 PM
+                3:00 PM
               </h3>
               <span className="text-sm tracking-[0.2em] text-deep-teal/60 font-semibold relative z-10">
                 2026
