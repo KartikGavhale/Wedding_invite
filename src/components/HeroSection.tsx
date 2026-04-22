@@ -107,9 +107,9 @@ export default function HeroSection() {
               || शुभ विवाह ||
             </p>
 
-            <p className="hero-elem uppercase tracking-[0.25em] text-xs md:text-sm font-semibold text-maroon/70 mb-6">
+            {/* <p className="hero-elem uppercase tracking-[0.25em] text-xs md:text-sm font-semibold text-maroon/70 mb-6">
               Together with their families
-            </p>
+            </p> */}
 
             <h1 className="hero-elem font-cursive text-4xl md:text-6xl lg:text-7xl text-red-dark leading-tight mb-2">
               Vibhuti Neware

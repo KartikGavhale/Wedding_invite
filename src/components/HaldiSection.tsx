@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { MapPin } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -196,6 +197,17 @@ export default function HaldiSection() {
                 Onwards
               </span>
             </div>
+
+            {/* CTA button */}
+            <a
+              href="https://maps.app.goo.gl/kAoYZbnZsM1NqaMG6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="haldi-elem inline-flex flex-row items-center gap-3 px-8 py-4 mb-4 bg-yellow-600/80 text-white border border-yellow-500/50 rounded-full font-semibold shadow-lg shadow-yellow-900/30 hover:bg-yellow-500 hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm relative z-10"
+            >
+              <MapPin size={18} />
+              Venue Location
+            </a>
           </div>
         </div>
       </div>
