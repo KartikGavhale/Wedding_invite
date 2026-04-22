@@ -74,7 +74,7 @@ export default function VenueSection() {
         </div>
 
         <h2 className="venue-elem font-cursive text-4xl md:text-6xl mb-3 text-red-dark">
-          The Venue
+          Engagement & Wedding Venue
         </h2>
 
         <div className="gold-divider venue-elem" />
